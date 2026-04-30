@@ -9,8 +9,8 @@
 import { Request, Response } from 'express'
 import { CreateCouponUseCase } from '../../application/use-cases'
 import { ICouponRepository } from '../../src/domain/interfaces/ICouponRepository'
-import { createCouponSchema } from '../../../shared/validations'
-import { AppError } from '../../../shared/AppError'
+import { createCouponSchema } from '../../shared/validations'
+import { AppError } from '../../shared/AppError'
 
 export class CouponController {
   constructor(

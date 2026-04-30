@@ -19,7 +19,7 @@
 import { ICartRepository } from '../../src/domain/interfaces/ICartRepository'
 import { IProductRepository } from '../../src/domain/interfaces/IProductRepository'
 import { IUserRepository } from '../../src/domain/interfaces/IUserRepository'
-import { AppError } from '../../../shared/AppError'
+import { AppError } from '../../shared/AppError'
 
 type AddToCartRequest = {
   userId: string

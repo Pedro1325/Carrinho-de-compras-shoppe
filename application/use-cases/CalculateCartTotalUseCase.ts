@@ -15,7 +15,7 @@
 
 import { ICartRepository } from '../../src/domain/interfaces/ICartRepository'
 import { ICouponRepository } from '../../src/domain/interfaces/ICouponRepository'
-import { AppError } from '../../../shared/AppError'
+import { AppError } from '../../shared/AppError'
 
 type CalculateCartTotalRequest = {
   userId: string

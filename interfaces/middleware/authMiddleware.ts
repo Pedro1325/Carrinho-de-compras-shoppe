@@ -19,7 +19,7 @@
 
 import { Request, Response, NextFunction } from 'express'
 import { verify } from 'jsonwebtoken'
-import { AppError } from '../../../shared/AppError'
+import { AppError } from '../../shared/AppError'
 
 // Estende o Request do Express para incluir userId
 declare global {

@@ -11,7 +11,7 @@ import {
   CreateProductUseCase,
   ListProductsUseCase,
 } from '../../application/use-cases'
-import { createProductSchema } from '../../../shared/validations'
+import { createProductSchema } from '../../shared/validations'
 
 export class ProductController {
   constructor(

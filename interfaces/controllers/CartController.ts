@@ -22,8 +22,8 @@ import {
   CalculateCartTotalUseCase,
   FinalizeCartUseCase,
 } from '../../application/use-cases'
-import { addToCartSchema } from '../../../shared/validations'
-import { AppError } from '../../../shared/AppError'
+import { addToCartSchema } from '../../shared/validations'
+import { AppError } from '../../shared/AppError'
 
 export class CartController {
   constructor(
@@ -75,7 +75,7 @@ export class CartController {
 
     await this.removeFromCartUseCase.execute({
       userId: req.userId,
-      itemId: req.params.itemId,
+      itemId: String(req.params.itemId),
     })
 
     res.status(204).send() // 204 = No Content (sucesso sem retorno)
@@ -93,7 +93,7 @@ export class CartController {
 
     const result = await this.updateCartItemQuantityUseCase.execute({
       userId: req.userId,
-      itemId: req.params.itemId,
+      itemId: String(req.params.itemId),
       quantity,
     })
 

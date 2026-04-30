@@ -34,10 +34,4 @@ async function mostrarCarrinho() {
   await mainMenu()
 }
 
-;(async () => {
-  await mainMenu()
-})()    
- 
-await mainMenu()
-
-
+mainMenu().catch(console.error)

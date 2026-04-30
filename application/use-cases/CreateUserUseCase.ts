@@ -21,7 +21,7 @@
 
 import { hash } from 'bcrypt'
 import { IUserRepository } from '../../src/domain/interfaces/IUserRepository'
-import { AppError } from '../../../shared/AppError'
+import { AppError } from '../../shared/AppError'
 
 // Dados de entrada (o que o controller/envia)
 type CreateUserRequest = {

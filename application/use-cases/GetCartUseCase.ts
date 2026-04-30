@@ -7,7 +7,7 @@
  */
 
 import { ICartRepository } from '../../src/domain/interfaces/ICartRepository'
-import { AppError } from '../../../shared/AppError'
+import { AppError } from '../../shared/AppError'
 
 type GetCartRequest = {
   userId: string

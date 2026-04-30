@@ -13,7 +13,7 @@
 
 import { compare } from 'bcrypt'
 import { IUserRepository } from '../../src/domain/interfaces/IUserRepository'
-import { AppError } from '../../../shared/AppError'
+import { AppError } from '../../shared/AppError'
 
 type LoginUserRequest = {
   email: string

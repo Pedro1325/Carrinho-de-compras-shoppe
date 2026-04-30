@@ -8,7 +8,7 @@
  */
 
 import { ICouponRepository } from '../../src/domain/interfaces/ICouponRepository'
-import { AppError } from '../../../shared/AppError'
+import { AppError } from '../../shared/AppError'
 
 type CreateCouponRequest = {
   code: string

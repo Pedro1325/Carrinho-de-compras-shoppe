@@ -8,7 +8,7 @@
  */
 
 import { IProductRepository } from '../../src/domain/interfaces/IProductRepository'
-import { AppError } from '../../../shared/AppError'
+import { AppError } from '../../shared/AppError'
 
 type CreateProductRequest = {
   name: string

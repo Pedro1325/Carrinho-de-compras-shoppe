@@ -24,8 +24,8 @@ import {
   CreateUserUseCase,
   LoginUserUseCase,
 } from '../../application/use-cases'
-import { createUserSchema, loginUserSchema } from '../../../shared/validations'
-import { AppError } from '../../../shared/AppError'
+import { createUserSchema, loginUserSchema } from '../../shared/validations'
+import { AppError } from '../../shared/AppError'
 
 export class UserController {
   constructor(

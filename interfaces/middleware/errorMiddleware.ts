@@ -20,7 +20,7 @@
 
 import { Request, Response, NextFunction } from 'express'
 import { ZodError } from 'zod'
-import { AppError } from '../../../shared/AppError'
+import { AppError } from '../../shared/AppError'
 
 export function errorMiddleware(
   error: Error,
@@ -42,9 +42,9 @@ export function errorMiddleware(
   if (error instanceof ZodError) {
     // Transforma array de erros em um objeto mais legível
     // Ex: { email: "Email inválido", password: "Senha muito curta" }
-    const messages = error.errors.map((err) => ({
-      field: err.path.join('.'),
-      message: err.message,
+    const messages = error.issues.map((err) => ({
+      field: String((err.path as PropertyKey[] | undefined)?.join('.') ?? ''),
+      message: String(err.message ?? ''),
     }))
 
     res.status(422).json({
