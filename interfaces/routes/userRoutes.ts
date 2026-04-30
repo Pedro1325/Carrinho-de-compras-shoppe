@@ -1,13 +1,25 @@
-// Rotas: Define os endpoints HTTP
-// Exemplo usando Express (instale o express primeiro: npm install express @types/express)
+/**
+ * ROTAS DE USUÁRIO
+ * 
+ * Define os endpoints HTTP relacionados a usuários:
+ * - POST /users - Criar conta
+ * - POST /users/login - Fazer login
+ * - GET /users/me - Ver perfil (requer autenticação)
+ */
 
 import { Router } from 'express'
 import { UserController } from '../controllers/UserController'
+import { authMiddleware } from '../middleware/authMiddleware'
 
-const router = Router()
-const userController = new UserController()
+export function userRoutes(userController: UserController): Router {
+  const router = Router()
 
-router.post('/users', (req, res) => userController.create(req, res))
-// TODO: Adicionar outras rotas (GET /users/:id, etc)
+  // Rotas públicas (não precisam de login)
+  router.post('/users', (req, res) => userController.create(req, res))
+  router.post('/users/login', (req, res) => userController.login(req, res))
 
-export default router
+  // Rotas protegidas (precisa estar logado)
+  router.get('/users/me', authMiddleware, (req, res) => userController.getProfile(req, res))
+
+  return router
+}
